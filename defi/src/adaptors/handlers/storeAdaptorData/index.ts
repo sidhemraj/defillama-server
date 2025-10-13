@@ -42,7 +42,7 @@ const ONE_DAY_IN_SECONDS = 24 * 60 * 60
 
 export const handler2 = async (event: IStoreAdaptorDataHandlerEvent) => {
   const defaultMaxConcurrency = 13
-  let { timestamp = timestampAnHourAgo, adapterType, protocolNames, maxConcurrency = defaultMaxConcurrency, isDryRun = false, isRunFromRefillScript = false,
+  let { timestamp = timestampAtStartofHour, adapterType, protocolNames, maxConcurrency = defaultMaxConcurrency, isDryRun = false, isRunFromRefillScript = false,
     runType = 'default', yesterdayIdSet = new Set(), todayIdSet = new Set(),
     throwError = false, checkBeforeInsert = false,
 
@@ -81,7 +81,7 @@ export const handler2 = async (event: IStoreAdaptorDataHandlerEvent) => {
       }
     }
   } else if (runType === 'store-all') {
-    fromTimestamp = timestampAnHourAgo - ONE_DAY_IN_SECONDS
+    fromTimestamp = timestampAtStartofHour - ONE_DAY_IN_SECONDS
     toTimestamp = fromTimestamp + ONE_DAY_IN_SECONDS - 1
   }
 
@@ -475,7 +475,7 @@ async function getRecentData(adapterType: AdapterType) {
         const dataItem = recentData[protocolId]
         const { dimStats, records } = dataItem
         let hasSignificantData = false
-        if (dataItem.records.length < 5) {
+        if (dataItem.records.length < 3) {
           dataItem.tooFewRecords = true
           delete dataItem.records
           continue; // too little data

@@ -2827,6 +2827,9 @@ const data: Protocol[] = [
       "https://callisto.network/idex-security-audit/",
     ],
     parentProtocol: "parent#idex",
+    dimensions: {
+      dexs: "idex-classic"
+    }
   },
   {
     id: "231",
@@ -9842,7 +9845,8 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     ],
     github: ["thales-markets"],
     dimensions: {
-      options: "thales"
+      options: "thales",
+      fees: "thales"
     }
   },
   {
@@ -13008,7 +13012,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     audit_note: null,
     gecko_id: "fodl-finance",
     cmcId: "12767",
-    category: "Options",
+    category: "Leveraged Farming",
     chains: ["Ethereum"],
     module: "fodl/index.js",
     twitter: "FODLfi",
@@ -16811,7 +16815,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     audit_note: null,
     gecko_id: "risq-protocol",
     cmcId: "12467",
-    category: "Options",
+    category: "Prediction Market",
     chains: ["Binance"],
     module: "risq.js",
     twitter: "risqprotocol",
@@ -17843,7 +17847,7 @@ The eWIT token is a custodial, wrapped version of the Witnet coin managed by the
     audit_note: null,
     gecko_id: "everest-token",
     cmcId: "12154",
-    category: "Options",
+    category: "DAO Service Provider",
     chains: ["Avalanche"],
     module: "everestdao/index.js",
     twitter: "EverestDAO",

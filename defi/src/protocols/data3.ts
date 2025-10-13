@@ -7786,14 +7786,14 @@ const data3_1: Protocol[] = [
   },
   {
     id: "3031",
-    name: "MetaMask",
+    name: "MetaMask Wallet",
     address: null,
     symbol: "-",
     url: "https://metamask.io/",
     description:
       "MetaMask is the leading self-custodial wallet. A simple way to access blockchain applications and web3",
     chain: "Ethereum",
-    logo: `${baseIconsUrl}/metamask.png`,
+    logo: `${baseIconsUrl}/metamask-wallet.jpg`,
     audits: "0",
     audit_note: null,
     gecko_id: null,
@@ -7803,11 +7803,11 @@ const data3_1: Protocol[] = [
     module: "dummy.js",
     twitter: "MetaMask",
     forkedFrom: [],
-    github: ["MetaMask"],
     dimensions: {
       fees: "metamask",
       aggregators: "metamask"
-    }
+    },
+    parentProtocol: "parent#metamask",
   },
   {
     id: "3032",
@@ -8030,7 +8030,7 @@ const data3_1: Protocol[] = [
     audit_note: null,
     gecko_id: "houdini-swap",
     cmcId: "23396",
-    category: "DEX Aggregator",
+    category: "Privacy",
     chains: ["Ethereum"],
     module: "houdiniswap/index.js",
     twitter: "HoudiniSwap",
@@ -12200,7 +12200,7 @@ const data3_1: Protocol[] = [
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Options",
+    category: "Options Vault",
     chains: ["Ergo"],
     module: "sigmao/index.js",
     twitter: "SigmaOptions",
@@ -16296,7 +16296,7 @@ const data3_1: Protocol[] = [
     dimensions: {
       fees: "sanctum",
       dexs: {
-        genuineSpikes: ["1704240000"],
+        genuineSpikes: ["1704240000", "1760054400"],
         adapter: "sanctum"
       }
     }
@@ -18805,8 +18805,8 @@ const data3_1: Protocol[] = [
     logo: `${baseIconsUrl}/ekubo.png`,
     audits: "2",
     audit_note: null,
-    gecko_id: null,
-    cmcId: null,
+    gecko_id: "ekubo-protocol" as any,
+    cmcId: "32416" as any,
     category: "Dexs",
     chains: ["Starknet"],
     module: "ekubo/index.js",
@@ -18855,7 +18855,7 @@ const data3_1: Protocol[] = [
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Options",
+    category: "Options Vault",
     chains: ["Arbitrum"],
     module: "valorem/index.js",
     forkedFrom: [],
@@ -24613,7 +24613,10 @@ const data3_1: Protocol[] = [
     listedAt: 1700881008,
     dimensions: {
       fees: "intent-x",
-      derivatives: "intent-x"
+      derivatives: {
+        adapter: "intent-x",
+        genuineSpikes: ["1760054400"],
+      }
     }
   },
   {
@@ -26686,23 +26689,28 @@ const data3_1: Protocol[] = [
   },
   {
     id: "3837",
-    name: "DyorSwap",
+    name: "DyorSwap AMM",
     address: "mode:0x097de1ADe6D7b46540637935C88B489860D310A2",
     symbol: "DYOR",
     url: "https://dyorswap.finance/?chainId=34443",
     description: "Decentralized exchange on Mode Mainnet",
     chain: "Mode",
-    logo: `${baseIconsUrl}/dyorswap.png`,
+    logo: `${baseIconsUrl}/dyorswap-amm.jpg`,
     audits: "0",
     audit_note: null,
-    gecko_id: "dyor",
-    cmcId: "13987",
+    gecko_id: null,
+    cmcId: null,
     category: "Dexs",
     chains: ["Mode"],
     forkedFromIds: ["2197"],
     module: "dyorswap/index.js",
-    twitter: "dyorswap",
+    twitter: "DYORSWAPDEX",
     listedAt: 1700767143,
+    dimensions: {
+      dexs: "dyorswap",
+      fees: "dyorswap"
+    },
+    parentProtocol: "parent#dyorswap",
   },
   {
     id: "3838",
@@ -27980,7 +27988,7 @@ const data3_1: Protocol[] = [
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Options",
+    category: "Options Vault",
     forkedFrom: [],
     chains: ["Binance"],
     module: "dvol/index.js",
@@ -30917,14 +30925,14 @@ const data3_1: Protocol[] = [
   },
   {
     id: "4016",
-    name: "Kana Labs Aggregator",
+    name: "Xyra Labs Aggregator",
     //previousNames: ["Kana Labs"],
     address: null,
     symbol: "-",
-    url: "https://kanalabs.io",
+    url: "https://app.xyralabs.io/swap",
     description: "Swap, Stake, Trade, Invest and more across 40 liquidity sources.",
     chain: "Arbitrum",
-    logo: `${baseIconsUrl}/kana-labs-aggregator.jpg`,
+    logo: `${baseIconsUrl}/xyra-labs-aggregator.jpg`,
     audits: "0",
     audit_note: null,
     gecko_id: null,
@@ -38759,24 +38767,24 @@ const data3_2: Protocol[] = [
   },
   {
     id: "4339",
-    name: "Velar Protocol",
+    name: "Velar AMM",
     address: "stacks:SP1Y5YSTAHZ88XYK1VPDH24GY0HPX5J4JECTMY4A1.velar-token",
     symbol: "VELAR",
     url: "https://www.velar.co",
     description: `DeFi Liquidity Protocol on Bitcoin`,
     chain: "Stacks",
-    logo: `${baseIconsUrl}/velar-protocol.jpg`,
+    logo: `${baseIconsUrl}/velar-amm.jpg`,
     audits: "0",
     audit_note: null,
-    gecko_id: "velar",
-    cmcId: "30074",
+    gecko_id: null,
+    cmcId: null,
     category: "Dexs",
     chains: ["Stacks"],
     forkedFrom: [],
     module: "velar-amm/index.js",
     twitter: "VelarBTC",
-    github: ["Velar-co"],
     listedAt: 1711031250,
+    parentProtocol: "parent#velar-protocol",
     dimensions: {
       fees: "velar",
       dexs: "velar"
@@ -42302,6 +42310,12 @@ const data3_2: Protocol[] = [
     module: "dummy.js",
     twitter: "ethereum",
     listedAt: 1713453599,
+    dimensions: {
+      fees: {
+        adapter: "ethereum",
+        genuineSpikes: ["1760054400"],
+      }
+    }
   },
   {
     id: "4489",
@@ -46977,14 +46991,14 @@ const data3_2: Protocol[] = [
   },
   {
     id: "4690",
-    name: "Lorenzo", // previous lorenzo-protocol
+    name: "Lorenzo stBTC", // previous lorenzo-protocol
     address: null,
     symbol: "-",
     url: "https://www.lorenzo-protocol.xyz",
     description:
       "Lorenzo is the Bitcoin Liquidity Finance Layer, creates an efficient market in which Bitcoin holders can easily find the best opportunities to invest their unused Bitcoin liquidity and serves as the premier DeFi ecosystem in which to finance Bitcoin restaking tokens.",
     chain: "Bitcoin",
-    logo: `${baseIconsUrl}/lorenzo.jpg`,
+    logo: `${baseIconsUrl}/lorenzo-stbtc.jpg`,
     audits: "2",
     audit_note: null,
     gecko_id: null,
@@ -48070,7 +48084,7 @@ const data3_2: Protocol[] = [
     audit_note: null,
     gecko_id: "doubleup",
     cmcId: null,
-    category: "Prediction Market",
+    category: "Luck Games",
     chains: ["Sui"],
     // previous dummy.js
     module: "doubleup/index.js",
@@ -49101,7 +49115,7 @@ const data3_2: Protocol[] = [
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Options",
+    category: "Options Vault",
     chains: ["zkSync Era"],
     oraclesBreakdown: [ { name: "Chainlink", type: "Primary", proof: []} ],
     forkedFrom: [],
@@ -51540,7 +51554,10 @@ const data3_2: Protocol[] = [
     audit_links: ["https://tech.usual.money/security-and-audits/audits "],
     listedAt: 1721046229,
     dimensions: {
-      fees: "usual"
+      fees: {
+        adapter: "usual",
+        genuineSpikes: ["1760054400"],
+      }
     }
   },
   {
@@ -52790,6 +52807,7 @@ const data3_2: Protocol[] = [
     forkedFrom: [],
     module: "reya-bridge/index.js",
     twitter: "reya_xyz",
+    parentProtocol: "parent#reya",
     listedAt: 1722510263,
   },
   {
@@ -53402,7 +53420,7 @@ const data3_2: Protocol[] = [
     audit_note: null,
     gecko_id: null,
     cmcId: null,
-    category: "Options",
+    category: "Synthetics",
     chains: ["Arbitrum"],
     forkedFrom: [],
     module: "umoja/index.js",
@@ -53743,13 +53761,14 @@ const data3_2: Protocol[] = [
   },
   {
     id: "4978",
-    name: "Reya DEX",
+    name: "Reya Perps",
+    previousNames: ["Reya DEX"],
     address: null,
     symbol: "-",
     url: "https://app.reya.xyz/",
     description: "Reya DEX is a perpetual futures exchange on the Reya Network",
     chain: "Reya Network",
-    logo: `${baseIconsUrl}/reya-dex.jpg`,
+    logo: `${baseIconsUrl}/reya-perps.jpg`,
     audits: "2",
     audit_note: null,
     gecko_id: null,
@@ -53763,6 +53782,7 @@ const data3_2: Protocol[] = [
     twitter: "reya_xyz",
     audit_links: ["https://docs.reya.network/more-resources/technical-resources"],
     listedAt: 1723560145,
+    parentProtocol: "parent#reya",
     dimensions: {
       fees: "reya-dex",
       derivatives: "reya-dex",
@@ -55556,7 +55576,7 @@ const data3_2: Protocol[] = [
     listedAt: 1724762254,
     dimensions: {
       "aggregator-derivatives": {
-        genuineSpikes: ["1749686400"],
+        genuineSpikes: ["1749686400", "1760054400"],
         adapter: "mux-protocol-agge"
       }
     }
@@ -66444,7 +66464,8 @@ const data3_2: Protocol[] = [
     twitter: "vanadatadex",
     listedAt: 1734619406,
     dimensions: {
-      dexs: "datadex"
+      dexs: "datadex",
+      fees: "datadex"
     }
   },
   {
